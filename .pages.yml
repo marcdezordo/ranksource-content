@@ -26,11 +26,13 @@ content:
         type: date
         required: true
         options:
-          format: 'YYYY-MM-DD'
+          format: 'yyyy-MM-dd'
       - name: updatedDate
         label: Date de mise à jour
         type: date
         required: false
+        options:
+          format: 'yyyy-MM-dd'
       - name: author
         label: Auteur
         type: string
@@ -122,6 +124,8 @@ content:
         label: Date de publication
         type: date
         required: true
+        options:
+          format: 'yyyy-MM-dd'
       - name: cover
         label: Couverture
         type: image
