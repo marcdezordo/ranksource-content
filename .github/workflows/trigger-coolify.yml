@@ -1,0 +1,33 @@
+name: Trigger Coolify rebuild (landing preprod)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger Coolify deploy
+        env:
+          COOLIFY_API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+          COOLIFY_LANDING_UUID: mii3sjqznzcz83baheanteud
+        run: |
+          if [ -z "$COOLIFY_API_TOKEN" ]; then
+            echo "::error::COOLIFY_API_TOKEN secret is missing. Add it in repo Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          http_code=$(curl --silent --output /tmp/coolify.json --write-out '%{http_code}' \
+            -X POST \
+            -H "Authorization: Bearer $COOLIFY_API_TOKEN" \
+            "https://clf.ranksource.com/api/v1/deploy?uuid=$COOLIFY_LANDING_UUID&force=false")
+          echo "HTTP $http_code"
+          cat /tmp/coolify.json || true
+          echo
+          if [ "$http_code" -ge 400 ]; then
+            echo "::error::Coolify deploy trigger failed with HTTP $http_code"
+            exit 1
+          fi
+          echo "::notice::Coolify rebuild triggered. Landing will pick up new content within ~90 seconds."
