@@ -1,0 +1,148 @@
+media: media
+content:
+  - name: blog
+    label: Articles de blog
+    type: collection
+    path: blog/fr
+    filename: '{slug}.md'
+    view:
+      fields: [title, category, pubDate, draft]
+      primary: title
+      sort: [pubDate, title]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: description
+        label: Description (40-220 caractères)
+        type: text
+        required: true
+      - name: pubDate
+        label: Date de publication
+        type: date
+        required: true
+        options:
+          format: 'YYYY-MM-DD'
+      - name: updatedDate
+        label: Date de mise à jour
+        type: date
+        required: false
+      - name: author
+        label: Auteur
+        type: string
+        default: 'Marc de Zordo'
+      - name: authorRole
+        label: Fonction de l'auteur
+        type: string
+        default: 'Fondateur · ranksource'
+      - name: authorAvatar
+        label: Avatar (chemin)
+        type: image
+        default: '/assets/marc-de-zordo.png'
+      - name: cover
+        label: Image de couverture (1200×630)
+        type: image
+        required: false
+      - name: coverAlt
+        label: Alt de la couverture
+        type: string
+        required: false
+      - name: category
+        label: Catégorie
+        type: select
+        required: true
+        default: strategy
+        options:
+          values:
+            - { value: strategy, label: 'Stratégie' }
+            - { value: product, label: 'Produit' }
+            - { value: cases, label: 'Études de cas' }
+            - { value: data, label: 'Recherche' }
+            - { value: guides, label: 'Playbook' }
+            - { value: news, label: 'Annonces' }
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: readingTime
+        label: Temps de lecture (min)
+        type: number
+        required: false
+      - name: featured
+        label: Mis en avant
+        type: boolean
+        default: false
+      - name: draft
+        label: Brouillon
+        type: boolean
+        default: false
+      - name: locale
+        label: Langue
+        type: string
+        default: 'fr'
+        hidden: true
+      - name: translationKey
+        label: Clé de traduction
+        type: string
+        required: false
+      - name: ogImage
+        label: Image OG sociale
+        type: image
+        required: false
+      - name: seoKeywords
+        label: Mots-clés SEO
+        type: string
+        list: true
+      - name: body
+        label: Contenu
+        type: rich-text
+        required: true
+  - name: whitepaper
+    label: Livres blancs
+    type: collection
+    path: whitepaper
+    filename: '{slug}.md'
+    view:
+      fields: [title, pubDate, draft]
+      primary: title
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: pubDate
+        label: Date de publication
+        type: date
+        required: true
+      - name: cover
+        label: Couverture
+        type: image
+        required: false
+      - name: pdfUrl
+        label: URL du PDF
+        type: string
+        required: false
+      - name: pageCount
+        label: Nombre de pages
+        type: number
+        required: false
+      - name: locale
+        label: Langue
+        type: string
+        default: 'fr'
+        hidden: true
+      - name: draft
+        label: Brouillon
+        type: boolean
+        default: false
+      - name: body
+        label: Description longue
+        type: rich-text
