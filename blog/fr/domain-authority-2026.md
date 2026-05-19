@@ -1,20 +1,30 @@
 ---
-title: "Pourquoi le « Domain Authority » ne prédit plus rien en 2026."
-description: "Les plateformes SEO continuent de vendre du lien au DA. Trois ans de données chez ranksource montrent que ce score ne corrèle quasiment plus avec le reach, les citations ou la surface IA."
+title: Pourquoi le « Domain Authority » ne prédit plus rien en 2026. 222
+description: Les plateformes SEO continuent de vendre du lien au DA. Trois ans
+  de données chez ranksource montrent que ce score ne corrèle quasiment plus
+  avec le reach, les citations ou la surface IA.
 pubDate: 2026-05-12
-author: "Marc de Zordo"
-authorRole: "Fondateur · ranksource"
-authorAvatar: "/assets/marc-de-zordo.png"
-category: "strategy"
-tags: ["seo", "domain-authority", "ai-search", "data"]
+updatedDate: 2026-05-19
+author: Marc de Zordo
+authorRole: Fondateur · ranksource
+authorAvatar: /assets/marc-de-zordo.png
+category: strategy
+tags:
+  - seo
+  - domain-authority
+  - ai-search
+  - data
 readingTime: 8
 featured: true
-locale: "fr"
-translationKey: "domain-authority-2026"
-ogImage: "/assets/marc-de-zordo.png"
-seoKeywords: ["domain authority 2026", "DA SEO obsolète", "ranksource autorité"]
+draft: false
+locale: fr
+translationKey: domain-authority-2026
+ogImage: /assets/marc-de-zordo.png
+seoKeywords:
+  - domain authority 2026
+  - DA SEO obsolète
+  - ranksource autorité
 ---
-
 Pourquoi le « Domain Authority » ne prédit *plus rien* en 2026.
 
  Le DA, treize ans après sa création par Moz, n'explique plus le reach, les citations IA ni le trafic organique. Illustration : ranksource.
@@ -27,21 +37,17 @@ Le Domain Authority (DA) est un score logarithmique entre 0 et 100, calculé par
 
 En 2013, c'était une approximation utile : Google reposait massivement sur PageRank, le graphe de liens était stable, et la SERP changeait peu. Treize ans plus tard, trois choses ont changé en profondeur :
 
- - **Google n'utilise plus que les liens.** Les signaux d'engagement, la fraîcheur, l'intent et les modèles génératifs ont pris plus de poids.
-
- - **Les LLM citent ailleurs.** ChatGPT, Claude, Perplexity et Gemini construisent leurs réponses sur des sources qui n'ont rien à voir avec le DA. Un magazine spécialisé avec un DA 45 peut être cité dix fois plus qu'un domaine généraliste à DA 85.
-
- - **Le DA est manipulable.** Trois ans de réseaux de liens payés ont gonflé artificiellement des centaines de domaines, sans aucun impact sur leur trafic réel.
+- **Google n'utilise plus que les liens.** Les signaux d'engagement, la fraîcheur, l'intent et les modèles génératifs ont pris plus de poids.
+- **Les LLM citent ailleurs.** ChatGPT, Claude, Perplexity et Gemini construisent leurs réponses sur des sources qui n'ont rien à voir avec le DA. Un magazine spécialisé avec un DA 45 peut être cité dix fois plus qu'un domaine généraliste à DA 85.
+- **Le DA est manipulable.** Trois ans de réseaux de liens payés ont gonflé artificiellement des centaines de domaines, sans aucun impact sur leur trafic réel.
 
 ## La méthodologie : 11 400 placements analysés
 
 Depuis 2023, nous suivons chaque article publié via la marketplace ranksource sur trois indicateurs :
 
- - **Reach réel**, mesuré via les déclarations éditeurs et l'audience tierce (Similarweb, GfK).
-
- - **Citations IA**, mesurées via 12 000 prompts trimestriels sur cinq LLM (ChatGPT, Claude, Perplexity, Gemini, Mistral).
-
- - **Surface organique**, suivie sur 90 jours post-publication via Search Console et Ahrefs.
+- **Reach réel**, mesuré via les déclarations éditeurs et l'audience tierce (Similarweb, GfK).
+- **Citations IA**, mesurées via 12 000 prompts trimestriels sur cinq LLM (ChatGPT, Claude, Perplexity, Gemini, Mistral).
+- **Surface organique**, suivie sur 90 jours post-publication via Search Console et Ahrefs.
 
 Pour chaque placement, nous avons le DA du domaine au moment de la publication. On a ensuite calculé les corrélations de Spearman entre DA et chaque indicateur, sur trois années glissantes.
 
@@ -68,21 +74,17 @@ Le point qui surprend le plus l'équipe : la corrélation DA · trafic organique
 
 Trois facteurs documentés expliquent ce que nous mesurons :
 
- - **Saturation**. Les domaines à fort DA sont surchargés de contenus sponsorisés. Leurs lecteurs ont appris à filtrer.
-
- - **Intent**. Un lecteur de magazine spécialisé arrive avec une intention plus forte qu'un lecteur de portail généraliste. Le taux de clic post-article est trois fois supérieur dans nos données.
-
- - **Spécialisation des LLM**. ChatGPT et Claude citent prioritairement des sources thématiquement adaptées à la requête. Le DA n'entre pas dans cette équation.
+- **Saturation**. Les domaines à fort DA sont surchargés de contenus sponsorisés. Leurs lecteurs ont appris à filtrer.
+- **Intent**. Un lecteur de magazine spécialisé arrive avec une intention plus forte qu'un lecteur de portail généraliste. Le taux de clic post-article est trois fois supérieur dans nos données.
+- **Spécialisation des LLM**. ChatGPT et Claude citent prioritairement des sources thématiquement adaptées à la requête. Le DA n'entre pas dans cette équation.
 
 ## La métrique de remplacement : RPI (Reach Per Intent)
 
 Au lieu du DA, nous avons développé une métrique propriétaire : le **RPI** (Reach Per Intent). Elle se calcule en trois composantes :
 
- - **Volume d'audience qualifiée** : visiteurs uniques mensuels filtrés sur l'intent thématique du domaine.
-
- - **Score de citation IA** : nombre de citations reçues sur 12 000 prompts, normalisé par catégorie.
-
- - **Index de fraîcheur éditoriale** : fréquence de publication et profondeur archivistique.
+- **Volume d'audience qualifiée** : visiteurs uniques mensuels filtrés sur l'intent thématique du domaine.
+- **Score de citation IA** : nombre de citations reçues sur 12 000 prompts, normalisé par catégorie.
+- **Index de fraîcheur éditoriale** : fréquence de publication et profondeur archivistique.
 
 Le RPI est public, mis à jour chaque trimestre, et téléchargeable au format CSV depuis notre [centre de ressources](/whitepapers).
 
@@ -90,11 +92,9 @@ Le RPI est public, mis à jour chaque trimestre, et téléchargeable au format C
 
 Si vous êtes annonceur, agence ou consultant et que vous utilisez encore le DA comme premier filtre, vous achetez probablement la mauvaise visibilité. Trois recommandations concrètes :
 
- - **Filtrez par intent thématique d'abord.** Un DA 50 spécialisé bat un DA 80 généraliste, sur la quasi-totalité des KPI.
-
- - **Mesurez les citations IA.** Si votre audience cherche dans ChatGPT, sa réponse vient d'un sous-ensemble de domaines spécifiques. Achetez là.
-
- - **Ne payez pas le DA.** Si un éditeur facture une prime parce qu'il a un DA élevé, vous payez un effet placebo.
+- **Filtrez par intent thématique d'abord.** Un DA 50 spécialisé bat un DA 80 généraliste, sur la quasi-totalité des KPI.
+- **Mesurez les citations IA.** Si votre audience cherche dans ChatGPT, sa réponse vient d'un sous-ensemble de domaines spécifiques. Achetez là.
+- **Ne payez pas le DA.** Si un éditeur facture une prime parce qu'il a un DA élevé, vous payez un effet placebo.
 
 « L'âge d'or du DA est derrière nous. La prochaine métrique gagnante mesurera l'*intent* et la *présence dans les LLM*, pas la couverture du graphe de liens. »
 
@@ -121,11 +121,11 @@ Vingt ans à construire des business en ligne aux croisements du contenu, du pai
  [
 
  LinkedIn
- ](https://www.linkedin.com/in/marc-de-zordo/)
+ ]([https://www.linkedin.com/in/marc-de-zordo/](https://www.linkedin.com/in/marc-de-zordo/))
  [
 
- marc@ranksource.com
- ](mailto:marc@ranksource.com)
+ [marc@ranksource.com](mailto:marc@ranksource.com)
+ ](mailto:[marc@ranksource.com](mailto:marc@ranksource.com))
  [
 
  À propos de ranksource
@@ -135,21 +135,21 @@ Vingt ans à construire des business en ligne aux croisements du contenu, du pai
 
  [Tout le blog →](/blog)
 
- [
- Recherche
+ 
+ [Recherche
  L'Indice ranksource, scores de confiance éditeur T2 2026.
- 14 min · 5 mai 2026
- ](/blog)
- [
- Recherche
+ 14 min · 5 mai 2026](/blog)
+ 
+ 
+ [Recherche
  À quoi ressemblent vraiment les citations IA, sur cinq LLM.
- 9 min · 7 avril 2026
- ](/blog)
- [
- Playbook
+ 9 min · 7 avril 2026](/blog)
+ 
+ 
+ [Playbook
  Le brief, c'est le produit. Écrivez-en de meilleurs.
- 11 min · 21 avril 2026
- ](/blog)
+ 11 min · 21 avril 2026](/blog)
+ 
 
 ## Prêt à propulser votre marque *grâce à la puissance des médias ?*
 
